@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react'
 import Header from './templates/Header'
 import HorizontalCards from './templates/HorizontalCards'
 import Dropdown from './templates/Dropdown'
+import Loading from './Loading'
 
 const Home = () => {
     document.title = 'Movie App | Homepage'
@@ -63,7 +64,7 @@ const Home = () => {
 
         </>
 
-    ) : <h1>Laoding</h1>
+    ) : <Loading/>
 }
 
 export default Home
