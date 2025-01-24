@@ -17,7 +17,7 @@ const Sidenav = () => {
             <h1 className='text-white font-semibold text-xl mt-10 mb-5'>New Feeds 
                 </h1>
                 <NavLink to="/trending" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-fire-fill"></i>Trending</NavLink>
-                <NavLink className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"><i className="mr-2 ri-bard-fill"></i>Popular</NavLink>
+                <NavLink to="/popular" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-bard-fill"></i>Popular</NavLink>
                 <NavLink className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"><i className="mr-2 ri-movie-ai-fill"></i>Movies</NavLink>
                 <NavLink className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"><i className="mr-2 ri-tv-2-fill"></i>Tv Shows</NavLink>
                 <NavLink className="hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"><i className="mr-2 ri-user-5-fill"></i>Peoples</NavLink> 
