@@ -14,6 +14,7 @@ const Trending = () => {
   const [trending, setTrending] = useState([])
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
+  document.title = `Movie App | Trending`
 
   const GetTrending = async () => {
     try {

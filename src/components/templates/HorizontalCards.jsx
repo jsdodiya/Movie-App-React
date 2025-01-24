@@ -11,7 +11,7 @@ const HorizontalCards = ({data}) => {
   return (
                
 
-        <div className='w-[100%]  flex overflow-y-hidden mb-5 p-5'>
+        <div className='w-[100%]  flex overflow-y-hidden mb-5 p-1'>
 
         {data.map((d,i)=>(
             <div key={i} className='min-w-[15%]   bg-zinc-900 mr-5 mb-5'>

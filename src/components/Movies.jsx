@@ -8,20 +8,21 @@ import Loading from './Loading'
 import Scroll from 'react-infinite-scroll-component'
 
 
-const Popular = () => {
-  document.title = `Movie App | Popular `
+
+const Movies = () => {
+  document.title = `Movie App | Movies `
   const navigate = useNavigate()
   const [category, setCategory] = useState('movie')
-  const [popular, setPopular] = useState([])
+  const [movies, setMovies] = useState([])
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
 
-  const GetPopular = async () => {
+  const GetMovies = async () => {
     try {
-        const { data } = await axios.get(`${category}/popular?page=${page}`);
+        const { data } = await axios.get(`discover/movie?page=${page}`);
 
         if(data.results.length > 0){
-          setPopular((prevstate) => [...prevstate, ...data.results]);
+          setMovies((prevstate) => [...prevstate, ...data.results]);
           setPage(page+1)
         }else{
           setHasMore(false)
@@ -35,12 +36,12 @@ const Popular = () => {
 
 
 const refreshhadnler =() => {
-  if(popular.length === 0){
-    GetPopular()
+  if(movies.length === 0){
+    GetMovies()
   }else{
     setPage(1)
-    setPopular([])
-    GetPopular()
+    setMovies([])
+    GetMovies()
     
   }
 }
@@ -49,13 +50,13 @@ useEffect(()=>{
   refreshhadnler()
 },[category])
 
-  return (popular.length > 0 ? (
+  return (movies.length > 0 ? (
     <div className=' w-full h-screen'>
       
       <div className='px-[5%] w-full flex items-center justify-between'>
       <h1 className=' text-2xl text-zinc-400 font-semibold'>
         <i onClick={() => navigate(-1)} className="hover:text-[#6556CD] ri-arrow-left-line"></i>
-        {' '}Popular
+        {' '}Movies
         </h1>        
 
         <div className='flex items-center w-[80%]'>
@@ -70,11 +71,11 @@ useEffect(()=>{
         
       </div>
       <Scroll
-      dataLength={popular.length}
-      next={GetPopular}
+      dataLength={movies.length}
+      next={GetMovies}
       hasMore={hasMore}
       loader={<h4>Loading...</h4>}     >
-         <Cards data={popular} title={category}/>
+         <Cards data={movies} title={category}/>
       </Scroll>
 
       </div>
@@ -83,4 +84,4 @@ useEffect(()=>{
 }
 
 
-export default Popular
+export default Movies
