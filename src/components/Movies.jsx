@@ -12,14 +12,14 @@ import Scroll from 'react-infinite-scroll-component'
 const Movies = () => {
   document.title = `Movie App | Movies `
   const navigate = useNavigate()
-  const [category, setCategory] = useState('movie')
+  const [category, setCategory] = useState('now_playing')
   const [movies, setMovies] = useState([])
   const [page, setPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
 
   const GetMovies = async () => {
     try {
-        const { data } = await axios.get(`discover/movie?page=${page}`);
+        const { data } = await axios.get(`/movie/${category}?page=${page}`);
 
         if(data.results.length > 0){
           setMovies((prevstate) => [...prevstate, ...data.results]);
@@ -63,7 +63,7 @@ useEffect(()=>{
         <div className='w-[100%]'>
         <Topnav />
         </div>
-        <Dropdown title={category} options={['movie','tv']} func={(e)=>setCategory(e.target.value)}/>
+        <Dropdown title={category} options={['now_playing','popular','top_rated','upcoming']} func={(e)=>setCategory(e.target.value)}/>
         
         
      
