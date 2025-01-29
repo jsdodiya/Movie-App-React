@@ -9,7 +9,7 @@ import Scroll from 'react-infinite-scroll-component'
 
 const Peoples = () => {
 
-  document.title = `Movie App | Tv Shows `
+  document.title = `Movie App | Peoples `
       const navigate = useNavigate()
       const [category, setCategory] = useState('popular')
       const [peoples, setPeoples] = useState([])
