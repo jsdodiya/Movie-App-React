@@ -44,7 +44,7 @@ const Topnav = () => {
                         {searches.map((s, i) => (
                             <NavLink
                                 key={i}
-                                to="#" // Add a valid route or `to` value here
+                                to={`/${s.media_type}/details/${s.id}`} // Add a valid route or `to` value here
                                 className="hover:text-black hover:bg-zinc-300 duration-300 font-semibold text-zinc-600 w-full p-10 flex justify-start items-center border-b-2 border-zinc-100"
                             >
                                 <img

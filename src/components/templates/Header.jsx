@@ -17,7 +17,7 @@ const Header = ({data}) => {
             <h1 className='w-[70%] text-5xl font-black text-white'>
             {data.name||data.title || data.original_name || data.original_title || 'Untitled'}
             </h1>
-            <p className='text-white w-[60%] mt-5 mb-3'>{data.overview.slice(0,200)}...<NavLink className='text-blue-400'> more</NavLink></p>
+            <p className='text-white w-[60%] mt-5 mb-3'>{data.overview.slice(0,200)}...<NavLink to={`/${data.media_type}/details/${data.id}`} className='text-blue-400'> more</NavLink></p>
             <p className='text-white '>
             <i className=" text-[#6556CD] ri-megaphone-fill"></i> {data.release_date || 'No Information'}
             <i className="ml-5 text-[#6556CD] ri-album-fill"></i> {data.media_type.toUpperCase()}
