@@ -18,9 +18,9 @@ const Sidenav = () => {
                 </h1>
                 <NavLink to="/trending" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-fire-fill"></i>Trending</NavLink>
                 <NavLink to="/popular" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-bard-fill"></i>Popular</NavLink>
-                <NavLink to="/movies" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-movie-ai-fill"></i>Movies</NavLink>
-                <NavLink to="/tvshows" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-tv-2-fill"></i>Tv Shows</NavLink>
-                <NavLink to="/peoples" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-user-5-fill"></i>Peoples</NavLink> 
+                <NavLink to="/movie" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-movie-ai-fill"></i>Movies</NavLink>
+                <NavLink to="/tv" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-tv-2-fill"></i>Tv Shows</NavLink>
+                <NavLink to="/person" className={({ isActive }) =>isActive? "bg-[#6556CD] text-white duration-300 rounded-lg p-5": "hover:bg-[#6556CD] hover:text-white duration-300 rounded-lg p-5"}><i className="mr-2 ri-user-5-fill"></i>Peoples</NavLink> 
             
             </nav>
 

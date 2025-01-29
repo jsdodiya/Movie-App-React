@@ -75,7 +75,7 @@ const Peoples = () => {
         next={GetPeoples}
         hasMore={hasMore}
         loader={<h4>Loading...</h4>}     >
-           <Cards data={peoples} title={category}/>
+           <Cards data={peoples} title='person'/>
         </Scroll>
   
         </div>

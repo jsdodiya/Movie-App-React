@@ -75,7 +75,7 @@ useEffect(()=>{
       next={GetMovies}
       hasMore={hasMore}
       loader={<h4>Loading...</h4>}     >
-         <Cards data={movies} title={category}/>
+         <Cards data={movies} title='movie'/>
       </Scroll>
 
       </div>
