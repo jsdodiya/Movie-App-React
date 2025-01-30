@@ -30,8 +30,6 @@ MovieApp is a React-based application that uses **Redux**, **Tailwind CSS**, and
 
 ## 📸 Screenshots
 
-## 📸 Screenshots
-
 ![Screenshot 1](https://github.com/your-username/your-repository-name/assets/images/screenshot1.png)
 ![Screenshot 2](https://github.com/your-username/your-repository-name/assets/images/screenshot2.png)
 
@@ -88,12 +86,6 @@ Follow these steps to get the project up and running locally:
 
 Contributions, issues, and feature requests are welcome!  
 Feel free to check the [issues page](https://github.com/your-username/movieapp/issues).
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ---
 
