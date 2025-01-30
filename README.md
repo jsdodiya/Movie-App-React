@@ -30,7 +30,10 @@ MovieApp is a React-based application that uses **Redux**, **Tailwind CSS**, and
 
 ## 📸 Screenshots
 
-_Add some screenshots of your app to showcase its design and functionality._
+## 📸 Screenshots
+
+![Screenshot 1](https://github.com/your-username/your-repository-name/assets/images/screenshot1.png)
+![Screenshot 2](https://github.com/your-username/your-repository-name/assets/images/screenshot2.png)
 
 ---
 
