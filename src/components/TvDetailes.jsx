@@ -1,21 +1,27 @@
 import React, { useEffect } from "react";
-import { NavLink, Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
-import { asyncloadmovie, removemovie } from "../store/actions/movieActions";
+import {
+  NavLink,
+  Outlet,
+  useLocation,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
+import { asyncloadtv, removetv } from "../store/actions/tvActions";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "../components/Loading";
 import HorizontalCards from "./templates/HorizontalCards";
 
-const MovieDetailes = () => {
+const TvDetailes = () => {
   const { pathname } = useLocation();
-  const { info } = useSelector((state) => state.movie);
+  const { info } = useSelector((state) => state.tv);
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(asyncloadmovie(id));
+    dispatch(asyncloadtv(id));
     return () => {
-      dispatch(removemovie());
+      dispatch(removetv());
     };
   }, [id]);
 
@@ -28,7 +34,7 @@ const MovieDetailes = () => {
         backgroundPosition: "top",
         backgroundSize: "cover",
       }}
-      className="relative w-screen h-[130vh] px-[10%]"
+      className="relative w-screen h-[180vh] px-[10%]"
     >
       {/* Part 1: Navigation */}
       <nav className="h-[10vh] w-full text-zinc-100 flex items-center gap-10 text-2xl">
@@ -78,7 +84,7 @@ const MovieDetailes = () => {
               info.details.original_title ||
               "Untitled"}
             <small className="text-2xl font-bold text-zinc-200">
-              ({info.details.release_date.split("-")[0]})
+              ({info.details.first_air_date.split("-")[0]})
             </small>
           </h1>
 
@@ -89,7 +95,7 @@ const MovieDetailes = () => {
             <h1 className="w-[60px] font-semibold text-2xl leading-6">
               User score
             </h1>
-            <h1 className="font-medium">{info.details.release_date}</h1>
+            <h1 className="font-medium">{info.details.first_air_date}</h1>
             <h1 className="font-medium">
               {info.details.genres.map((g) => g.name).join(", ")}
             </h1>
@@ -121,7 +127,9 @@ const MovieDetailes = () => {
       <div className="w-[80%] flex flex-col gap-y-5 mt-5">
         {info.watchproviders?.flatrate && (
           <div className="flex gap-x-4 items-center">
-            <h1 className="text-[22px] text-white font-semibold">Watch Now On:</h1>
+            <h1 className="text-[22px] text-white font-semibold">
+              Watch Now On:
+            </h1>
             {info.watchproviders.flatrate.map((w, index) => (
               <img
                 key={index}
@@ -171,12 +179,48 @@ const MovieDetailes = () => {
         )}
       </div>
 
-      <hr className="mt-10 mb-5 border-none h-[1px] bg-zinc-400" />
+      {/* Part 4: Seasons */}
 
-      {/* Part 4: Recommendations */}
-      <h1 className="text-white text-3xl font-bold mb-2">Similar Movies</h1>
+      <hr className="mt-10 mb-5 border-none h-[1px] bg-zinc-400" />
+      <h1 className="text-white text-3xl font-bold mb-2">Seasons</h1>
+      <div className="w-[100%] flex overflow-y-hidden">
+        {info.details.seasons.length > 0 ? (
+          info.details.seasons.map((s) => (
+            <div
+              className="w-[15vw] mr-5"
+              key={s.id || s.name || Math.random()}
+            >
+              <img
+                className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] min-w-[12vw] h-[30vh] object-cover"
+                src={
+                  s.poster_path || s.backdrop_path
+                    ? `https://image.tmdb.org/t/p/original/${
+                        s.poster_path || s.backdrop_path
+                      }`
+                    : "https://t4.ftcdn.net/jpg/04/00/24/31/360_F_400243185_BOxON3h9avMUX10RsDkt3pJ8iQx72kS3.jpg" // Path to your fallback image
+                }
+                alt={s.name || "Default Image"}
+              />
+
+              <h1 className="text-zinc-300 text-2xl mt-3 font-semibold">
+                {s.name || "Untitled"}
+              </h1>
+            </div>
+          ))
+        ) : (
+          <h1 className="text-white text-2xl font-semibold">
+            No seasons available
+          </h1>
+        )}
+      </div>
+
+      {/* Part 5: Recommendations */}
+      <hr className="mt-10 mb-5 border-none h-[1px] bg-zinc-400" />
+      <h1 className="text-white text-3xl font-bold mb-2">Similar Tv Shows</h1>
       <HorizontalCards
-        data={info.recommendations.length > 0 ? info.recommendations : info.similar}
+        data={
+          info.recommendations.length > 0 ? info.recommendations : info.similar
+        }
       />
       <Outlet />
     </div>
@@ -185,4 +229,4 @@ const MovieDetailes = () => {
   );
 };
 
-export default MovieDetailes;
+export default TvDetailes;
