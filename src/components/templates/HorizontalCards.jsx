@@ -6,7 +6,7 @@ import Dropdown from "./Dropdown";
 const HorizontalCards = ({ data }) => {
   return (
     <div className="w-[100%]  flex overflow-y-hidden mb-5 p-1">
-      {data.map((d, i) => (
+      {data.length > 0 ? data.map((d, i) => (
         <NavLink
           to={`/${d.media_type}/details/${d.id}`}
           key={i}
@@ -34,7 +34,7 @@ const HorizontalCards = ({ data }) => {
             </p>
           </div>
         </NavLink>
-      ))}
+      )): <h1 className="text-white text-3xl font-black text-center mt-5">There is nothing to show</h1>}
     </div>
   );
 };
