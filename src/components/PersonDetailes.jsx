@@ -173,12 +173,12 @@ const PersonDetails = () => {
           </div>
           <div
             className="list-disc text-zinc-400 mt-5 w-full h-[50vh] overflow-x-hidden overflow-y-auto 
-            shadow-xl shadow-[rgba(255,255,255,.3)] border-2 border-zinc-700 p-5"
+            shadow-xl shadow-[rgba(255,255,255,.3)] border-2 hover:border-zinc-900 p-5"
           >
             {info[`${category}Credits`]?.cast.map((c, i) => (
               <li
                 key={i}
-                className="hover:text-white duration-300 cursor-pointer p-5"
+                className="hover:text-white hover:bg-zinc-950  duration-300 cursor-pointer p-5"
               >
                 <Link to={`/${category}/details/${c.id}`}>
                   <span>
@@ -188,7 +188,7 @@ const PersonDetails = () => {
                       c.original_title ||
                       "Untitled"}
                   </span>
-                  <span className="block ml-6">{c.character && `Character name: ${c.character}`}</span>
+                  <span className="block ml-6">{c.character && `Character Name: ${c.character}`}</span>
                 </Link>
               </li>
             ))}

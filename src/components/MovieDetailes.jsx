@@ -19,7 +19,6 @@ const MovieDetailes = () => {
     };
   }, [id]);
 
-  console.log(info);
 
   return info ? (
     <div

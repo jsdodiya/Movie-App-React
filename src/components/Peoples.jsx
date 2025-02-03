@@ -48,7 +48,7 @@ const Peoples = () => {
     useEffect(()=>{
       refreshhadnler()
     },[category])
-    console.log(peoples)
+    
 
     return (peoples.length > 0 ? (
       <div className=' w-full h-screen'>

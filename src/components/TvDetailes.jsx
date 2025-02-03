@@ -25,7 +25,7 @@ const TvDetailes = () => {
     };
   }, [id]);
 
-  console.log(info);
+
 
   return info ? (
     <div

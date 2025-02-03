@@ -32,7 +32,7 @@ const Trending = () => {
         console.error('Error fetching search results:', error);
     }
 };
-console.log(trending)
+
 
 const refreshhadnler =() => {
   if(trending.length === 0){

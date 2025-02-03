@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = ({data}) => {
-    // console.log(data);
-
+   
     return (
         <div
             style={{
