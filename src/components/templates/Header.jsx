@@ -23,7 +23,7 @@ const Header = ({data}) => {
             <i className="ml-5 text-[#6556CD] ri-album-fill"></i> {data.media_type.toUpperCase()}
 
             </p>
-            <NavLink className='p-4 bg-transparent border-2 rounded-xl mt-5 text-white hover:bg-[#6556CD]'> Watch Trailer</NavLink>
+            <NavLink className='p-4 bg-transparent border-2 rounded-xl mt-5 text-white hover:bg-[#6556CD]' to={`/${data.media_type}/details/${data.id}/trailer`}> Watch Trailer</NavLink>
         </div>
     );
 };

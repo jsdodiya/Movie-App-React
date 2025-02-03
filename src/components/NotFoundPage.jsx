@@ -1,5 +1,5 @@
 import React from 'react'
-import NotFound from '../../public/404.gif'
+import NotFound from '/404.gif'
 
 const NotFoundPage = () => {
   return (

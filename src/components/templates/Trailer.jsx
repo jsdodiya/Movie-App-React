@@ -23,6 +23,7 @@ const Trailer = () => {
       </NavLink>
       {ytvideo?.key ? (
         <ReactPlayer
+          controls
           height={800}
           width={1400}
           url={`https://www.youtube.com/watch?v=${ytvideo.key}`}
